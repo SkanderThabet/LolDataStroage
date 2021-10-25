@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import tn.esprit.leagueoflegendrecyclerview.data.*
+import tn.esprit.loldatastorage.data.NAME
+import tn.esprit.loldatastorage.data.PICTURE
+import tn.esprit.loldatastorage.data.ROLE
 
 class DetailActivity : AppCompatActivity() {
 

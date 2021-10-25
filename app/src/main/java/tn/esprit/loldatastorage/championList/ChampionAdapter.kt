@@ -1,13 +1,16 @@
-package tn.esprit.leagueoflegendrecyclerview.championList
+package tn.esprit.loldatastorage.championList
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import tn.esprit.leagueoflegendrecyclerview.data.Champion
-import tn.esprit.leagueoflegendrecyclerview.data.*
+import tn.esprit.loldatastorage.data.Champion
 import tn.esprit.loldatastorage.DetailActivity
 import tn.esprit.loldatastorage.R
+import tn.esprit.loldatastorage.data.NAME
+import tn.esprit.loldatastorage.data.PICTURE
+import tn.esprit.loldatastorage.data.ROLE
+import tn.esprit.loldatastorage.utils.AppDataBase
 
 class ChampionAdapter(var championsList: MutableList<Champion>) : RecyclerView.Adapter<ChampionViewHolder>() {
 
@@ -39,7 +42,9 @@ class ChampionAdapter(var championsList: MutableList<Champion>) : RecyclerView.A
 
         holder.btnDelete.setOnClickListener {
             //TODO 13 "Delete a champion from the database and refresh the recyclerView"
-
+            AppDataBase.getDatabase(holder.itemView.context).champDao().delete(championsList[position])
+            championsList.removeAt(position)
+            notifyDataSetChanged()
 
 
         }

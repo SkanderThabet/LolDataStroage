@@ -1,4 +1,4 @@
-package tn.esprit.leagueoflegendrecyclerview.championList
+package tn.esprit.loldatastorage.championList
 
 import android.view.View
 import android.widget.ImageView
